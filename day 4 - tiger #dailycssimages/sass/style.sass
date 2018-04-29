@@ -1,0 +1,70 @@
+body
+  background-color: #5F0F40
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  
+.head
+  background-color: #EA7100
+  width: 200px
+  height: 200px
+  border-radius: 50%
+  box-shadow: inset -1px -40px 0px 5px rgba(255,255,255,1)
+  position: relative
+.ear
+  &--left
+    background-color: #EA7100
+    position: absolute
+    width: 70px
+    height: 60px
+    transform: rotate(10deg)
+    border-radius: 5px
+    left: 10%
+    top: 3%
+  &--right
+    @extend .ear--left
+    left: auto
+    right: 10%
+    transform: rotate(-10deg)
+    // border: 1px solid #red
+.eye
+  &--left
+    background-color: #000
+    width: 20px
+    height: 20px
+    position: absolute
+    left: 30%
+    top: 50%
+    border-radius: 50%
+  &--right
+    @extend .eye--left
+    left: auto
+    right: 30%
+.nose
+  position: absolute
+  top: 75%
+  left: 40%
+  width: 0 
+  height: 0 
+  border-left: 20px solid transparent
+  border-right: 20px solid transparent
+  border-top: 10px solid black
+  &--upper
+    @extend .nose
+    border-top: 0
+    border-bottom: 74px solid brown
+    top: -84px
+    left: -20px
+.mouth
+  position: absolute
+  top: 80%
+  left: 46%
+  width: 10px 
+  height: 10px
+  border-left: 3px solid transparent
+  border-right: 3px solid black
+  border-top: 3px solid black
+  border-bottom: 3px solid transparent
+  transform: rotate(-45deg)
+  // border-radius: 50%

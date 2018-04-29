@@ -1,0 +1,163 @@
+body
+  background-color: #93C48B
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  overflow: hidden
+//   HEAD
+.head
+  background-color: #A8763E
+  width: 200px
+  height: 200px
+  border-radius: 50%
+  position: relative
+  z-index: 20
+  &__inner
+    background-color: #764134
+    height: 100%
+    width: 100%
+    border-radius: 50%
+    position: relative
+    box-shadow: inset -4px -5px 0px 3px rgba(99,47,33,1)
+    
+//EARS
+.ear--left
+  background-color: #764134
+  width: 30px
+  height: 30px
+  border-radius: 50%
+  position: absolute
+  top: 5%
+  left: 10%
+  &--inner
+    background-color: #A8763E
+    position: absolute
+    height: 10px
+    width: 10px
+    border-radius: 50%
+    left: 25%
+    top: 20%
+.ear--right
+    @extend .ear--left
+    left: 75%
+    // animation: shakeEar 2s infinite ease-in-out
+    &--inner
+      @extend .ear--left--inner
+      left: 42% 
+    
+// EYES
+.eye--left
+  background-color: #2f2f2f
+  width: 20px
+  height: 20px
+  border-radius: 50%
+  position: absolute
+  top: 25%
+  left: 20%
+  // animation: blink 2s infinite .7s
+.eye--right
+  @extend .eye--left
+  left: 67%
+.jaw
+  // background-color: #A8763E
+  width: 50px
+  height: 60px
+  border-radius: 90%
+  position: absolute
+  top: 20%
+  left: 36%
+.nose
+  position: absolute
+  background-color: #2f2f2f
+  height: 15px
+  width: 20px
+  border-bottom-left-radius: 50px
+  border-bottom-right-radius: 50px
+  left: 30%
+  top: 24%
+  z-index: 30
+  &--left
+    background-color: #A8763E
+    position: absolute
+    top: 30%
+    left: -5%
+    height: 28px
+    width: 28px
+    border-radius: 50%
+    z-index: 20
+  &--right
+    @extend .nose--left
+    left: 51%
+
+.mouth
+  position: absolute
+  background-color: #2f2f2f
+  height: 10px
+  width: 5px
+  top: 40%
+  left: 45%
+  border-radius: 20%
+  &--horizontal
+    // @extend .mouth
+    width: 25px
+    // height: 2px
+    position: absolute
+    top: 56%
+    left: 25%
+    border-bottom-left-radius: 30px
+    border-bottom-right-radius: 30px
+    border-bottom: 3px solid #2f2f2f
+    z-index: 10
+.teeth
+  &--left
+    position: absolute
+    background-color: #fff
+    top: 50%
+    left: 22%
+    width: 13px
+    height: 35px
+    border-bottom-left-radius: 3px
+    border-bottom-right-radius: 3px
+    z-index: 10
+  &--right
+    @extend .teeth--left
+    left: 52%
+.tail
+  position: absolute
+  z-index: -1
+  background-color: #2f2f2f
+  height: 80px
+  width: 200px
+  border-radius: 50px
+  border-top-right-radius: 300px
+  border-bottom-right-radius: 250px
+  transform: rotate(-20deg)
+  bottom: -80%
+  left: -40%
+  background-image: linear-gradient(transparent 11px, rgba(220,220,200,.1) 12px, transparent 12px), linear-gradient(90deg, transparent 11px, rgba(220,220,200,.2) 12px, transparent 12px)
+  background-size: 100% 20px, 20px 100%
+  box-shadow: inset -14px -5px 0px 3px rgba(0,0,0,.3)
+  animation: rotate 2s ease-in-out infinite
+  
+  
+@keyframes rotate
+  0%, 20%, 50%
+    transform: rotate(-20deg)
+  10%, 30%
+    transform: rotate(10deg)
+.leg
+  &--left
+    background: #764134
+    width: 50px
+    height: 50px
+    position: absolute
+    bottom: 0
+    left: 10%
+    border-radius: 50%
+    // border: 10px solid #764134
+    
+  &--right
+    @extend .leg--left
+    left: 65%
+    box-shadow: inset -2px -5px 0px 0px rgba(99,47,33,1)
